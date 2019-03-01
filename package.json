@@ -1,0 +1,15 @@
+{
+  "name": "puppeteer-fb",
+  "version": "1.0.0",
+  "description": "post data to facebook marketplace",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/start.js"
+  },
+  "dependencies": {
+    "puppeteer": "^1.12.2"
+  },
+  "repository": "git@github.com:samarpanda/puppeteer-fb.git",
+  "author": "Samar Panda <er.samarpanda@gmail.com>",
+  "license": "MIT"
+}
