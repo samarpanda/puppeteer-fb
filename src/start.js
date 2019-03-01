@@ -12,11 +12,11 @@ async function main() {
   // await fb.openMp(page);
   await fb.openPostMp(page);
 
-  // await page.screenshot({
-  //   path: 'facebook.png'
-  // });
+  await page.screenshot({
+    path: 'facebook.png'
+  });
 
-  // await base.stop(browser);
-  // return true;
+  await base.stop(browser);
+  return true;
 }
 main();

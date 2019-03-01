@@ -1,3 +1,4 @@
+const path = require('path');
 const CRED = require('./creds');
 const sleep = async (ms) => {
   return new Promise((res, rej) => {
@@ -56,13 +57,23 @@ exports.openPostMp = async function(page) {
 
   const locationSearchSelector = '#modalDialogView input';
   const locaSearchInput = await page.waitForSelector(locationSearchSelector, {visible: true});
-  await locaSearchInput.type('bangalore');
+  await locaSearchInput.type('bangalore');//Select city
 
   const typeHeadSelector = '#nt-typeahead-results-view div > div > div';
   const typeHeadInput = await page.waitForSelector(typeHeadSelector, {visible: true});
   await typeHeadInput.click();
 
+  const filePath = path.relative(process.cwd(), __dirname +'/../'+ 'assets/1.jpg');
+  console.log(filePath);
+  const input = await page.$("input[type='file']");
+  await input.uploadFile(filePath);
 
+  const imgPreviewSelector = '._5cqb img';
+  await page.waitForSelector(imgPreviewSelector);
+
+  const submitBtnSelector = '#u_0_1h';
+  const submitBtn = await page.waitForSelector(submitBtnSelector, {visible: true});
+  await submitBtn.click();
 }
 
 /**
