@@ -7,9 +7,16 @@
     "dev": "node ./src/start.js"
   },
   "dependencies": {
+    "date-fns": "^1.30.1",
+    "hmac_sha1": "^0.1.1",
+    "hmacsha1": "^1.0.0",
     "puppeteer": "^1.12.2"
   },
   "repository": "git@github.com:samarpanda/puppeteer-fb.git",
   "author": "Samar Panda <er.samarpanda@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1"
+  }
 }

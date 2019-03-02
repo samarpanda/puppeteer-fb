@@ -31,15 +31,23 @@ exports.openPostMp = async function(page) {
     // console.log('title selector available');
   });
   const titleInput = await page.$(titleSelector);
-  await titleInput.type('2013 Maruti Suzuki Swift VXI BSIII');// Need title
+  const titleTxt = `White 2010 BMW 3 Series 320d - 40,000 kms driven in Thanisandra Road`
+  await titleInput.type(titleTxt);
 
   const priceSelector = '#u_0_1v';
   const priceInput = await page.$(priceSelector);
-  await priceInput.type('1000000');// Need pricing
+  await priceInput.type('1000000');
 
   const descSelector = '#u_0_1y';
   const descInput = await page.$(descSelector);
-  await descInput.type('Hello Description');// Need description
+  const desTxt = `97 Checkpoints have been inspected on all Quikr Assured Cars.
+  Here is BMW 3 Series 2010 well maintained Car for sale. This Diesel car has been driven around 35000 KMs.
+  We offer Hassle-free Paper Transfer & RTO Services on every Quikr Assured car. We can also offer great EMI options to keep the car pocket-friendly.
+  Contact us to know more.
+  To explore and test drive a wide range of cars, please visit our Quikr Car Yards at:
+  La Prominent Cars (Nagarbhavi)
+  8 Block, Govindaraja Nagar Ward,Nagarbhavi,Bangalore`;
+  await descInput.type(desTxt);
 
   const catSelector = '#u_0_1w';
   const catInput = await page.$(catSelector);
