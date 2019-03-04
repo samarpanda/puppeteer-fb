@@ -6,7 +6,7 @@ const today = () => dateFns.format(new Date(), 'YYYY-MM-DD');
 
 exports.getToken = function(){
 
-  const data = `${CRED.email}${CRED.appid}${dateFns.format(new Date(), 'YYYY-MM-DD')}`
+  const data = `${CRED.email}${CRED.appid}${today()}`
   const signature = new HmacSha1().digest(CRED.skey, data);
   const URL = 'https://api.quikr.com/app/auth/access_token';
 
@@ -25,8 +25,8 @@ exports.getToken = function(){
 
 exports.getAdsByCategory = function(catId){
   const URL = `https://api.quikr.com/public/adsByCategory?categoryId=${catId}&city=Bangalore&from=4&size=1`
-  const TOKEN = '4ec80ffd4a1c55e40d107164778d6f3c';
-  const TOKENID = '1541691931'
+  const TOKEN = '';
+  const TOKENID = ''
   const data = `${CRED.appid}${CRED.email}${today()}`
   const signaturev2 = new HmacSha1().digest(TOKEN, data);
 
